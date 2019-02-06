@@ -22,6 +22,7 @@ public class MeliApplication extends SpringBootServletInitializer {
 
   @Bean
   public PlanetarySystem planetarySystem() {
+    //Esto puede ser configurable, pero escapa al alcance del ejercicio
     Planet ferengi = new Planet.Builder()
       .name("Ferengi")
       .distanceToStar(new BigDecimal(500))

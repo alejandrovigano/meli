@@ -1,0 +1,44 @@
+@startuml
+class Planet {
+  + name
+  + angularVelocity
+  + distanceToStar
+  + degreesAtInstantZero
+}
+
+note left of Planet : "Información estática del un planeta"
+
+class PlanetarySystem {
+  + planets: List<Planet>
+}
+
+note left of PlanetarySystem : "Información de un sistema planetario"
+
+PlanetarySystem *-- Planet
+
+class PlanetInstant {
+  + planet: Planet;
+  + degrees;
+  + position: Position;
+}
+
+note right of PlanetInstant : "Información de un planeta en un instante determinado"
+
+class PlanetarySystemInstant {
+  + planetInstants: List<PlanetInstant>
+}
+
+note right of PlanetarySystemInstant : "Información de un sistema planetario en un instante determinado"
+
+class Position {
+  + x
+  + y
+}
+
+note right of Position : "Coordenadas del plano perpendicular a la orbita de los planetas"
+
+PlanetarySystemInstant *-- PlanetInstant
+PlanetInstant -- Position
+
+hide methods
+@enduml

@@ -1,0 +1,49 @@
+@startuml
+
+class Forecast {
+  + droughtDays: List<ForecastDay>
+  + rainPeriods: List<RainPeriod>
+  + optimalPTDays: List<ForecastDay>
+  + totalDays
+}
+
+note right of Forecast : "Representa un pronostico del clima en determinado tiempo"
+
+class ForecastDay {
+  id
+  day
+  weather: Weather
+}
+
+note right of ForecastDay : "Representa el pronostico de un dia particular"
+
+class RainPeriod {
+  rainDayStart
+  rainDayEnd
+  maxRainfallIntensity
+  rainDayWithMaxRainfallIntensity
+}
+
+note right of RainPeriod : "Representa un periodo de lluvias"
+
+class Weather {
+  + status: WeatherStatus
+  + rainfallIntensity
+}
+
+note right of Weather : "Representa una condición climatica"
+
+enum WeatherStatus {
+    DROUGHT
+    NORMAL
+    RAINY
+    OPTIMAL_P_T
+}
+
+Forecast *-- ForecastDay
+Forecast *-- RainPeriod
+ForecastDay -- Weather
+Weather -- WeatherStatus
+
+hide methods
+@enduml

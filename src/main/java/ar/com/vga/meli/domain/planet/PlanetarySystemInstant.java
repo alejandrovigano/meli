@@ -1,6 +1,5 @@
-package ar.com.vga.meli.domain;
+package ar.com.vga.meli.domain.planet;
 
-import java.math.BigInteger;
 import java.util.List;
 
 /**
@@ -14,18 +13,18 @@ public class PlanetarySystemInstant {
   private PlanetarySystem planetarySystem;
 
   /**
-   * Information of the planets in the instant
+   * Information of the planets at this instant
    */
   private List<PlanetInstant> planetInstants;
 
   /**
-   * The day of the instant
+   * The instant
    */
-  private BigInteger day;
+  private Long day;
 
   public PlanetarySystemInstant(PlanetarySystem planetarySystem,
                                 List<PlanetInstant> planetInstants,
-                                BigInteger day) {
+                                Long day) {
 
     this.planetarySystem = planetarySystem;
     this.planetInstants = planetInstants;
@@ -40,7 +39,7 @@ public class PlanetarySystemInstant {
     return planetInstants;
   }
 
-  public BigInteger getDay() {
+  public Long getDay() {
     return day;
   }
 }

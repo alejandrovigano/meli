@@ -1,4 +1,4 @@
-package ar.com.vga.meli.domain;
+package ar.com.vga.meli.domain.planet;
 
 import java.util.List;
 

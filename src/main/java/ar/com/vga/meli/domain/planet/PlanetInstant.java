@@ -1,4 +1,4 @@
-package ar.com.vga.meli.domain;
+package ar.com.vga.meli.domain.planet;
 
 import java.math.BigDecimal;
 
@@ -17,15 +17,12 @@ public class PlanetInstant {
    */
   private BigDecimal degrees;
 
-  /**
-   * The position of the planet in the planetary system
-   */
   private Position position;
 
-  public PlanetInstant(Planet planet, BigDecimal degrees, Position position) {
+  public PlanetInstant(Planet planet, BigDecimal degrees) {
     this.planet = planet;
     this.degrees = degrees;
-    this.position = position;
+    this.position = Position.from(degrees, getPlanet().getDistanceToStar());
   }
 
   public Planet getPlanet() {
@@ -39,4 +36,5 @@ public class PlanetInstant {
   public Position getPosition() {
     return position;
   }
+
 }

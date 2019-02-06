@@ -64,7 +64,6 @@ public class ForecastServiceImpl implements ForecastService {
     //calculate forecasts days
     LongStream.range(0L, ChronoUnit.DAYS.between(now, tenYearsFromNow) + 1)
       .boxed()
-      .parallel() //may be not needed, but will work
       .forEach(day -> executor.execute(() -> {
         ForecastDay forecastDay = calculateForecastDay(day);
         LOGGER.fine("Saving day:" + day);

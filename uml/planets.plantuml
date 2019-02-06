@@ -35,7 +35,7 @@ class Position {
   + y
 }
 
-note right of Position : "Coordenadas del plano perpendicular a la orbita de los planetas"
+note right of Position : "Coordenadas del plano paralelo a la orbita de los planetas"
 
 PlanetarySystemInstant *-- PlanetInstant
 PlanetInstant -- Position

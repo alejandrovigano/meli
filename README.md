@@ -1,6 +1,6 @@
 # MELI
 
-## Informacin inicial
+## Información inicial
 
 #### Levantar la aplicación local
 
@@ -15,7 +15,7 @@
 #### Pasos para probar:
 - https://meli-230900.appspot.com/clima/procesar - job que evalua la posicion de los planetas 10 años, calcula el pronostico climatico y lo guarda en la base de datos
 - https://meli-230900.appspot.com/clima/analizar - analiza los datos de la base de datos, y genera un objeto con la informacin de dias sequias, periodos de lluvias y dias de presion y temp optimos.
-- https://meli-230900.appspot.com/clima/analizar - obtiene de la base de datos, la información de un día en particular
+- https://meli-230900.appspot.com/clima?dia={día} - obtiene de la base de datos, la información de un día en particular
 
 ## Información sobre resolución
 
